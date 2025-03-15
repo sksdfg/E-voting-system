@@ -1,0 +1,6 @@
+CREATE VIEW finalCount AS
+SELECT region,
+       SUM(CASE WHEN party_id = 1 THEN 1 ELSE 0 END) AS party1_votes,
+       SUM(CASE WHEN party_id = 2 THEN 1 ELSE 0 END) AS party2_votes
+FROM votes
+GROUP BY region;

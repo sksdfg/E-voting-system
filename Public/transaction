@@ -1,0 +1,13 @@
+DELIMITER $$
+
+CREATE TRIGGER after_voter_update
+AFTER UPDATE ON voters
+FOR EACH ROW
+BEGIN
+    -- Check if has_voted changed from 1 to 0
+    IF OLD.has_voted = 1 AND NEW.has_voted = 0 THEN
+        DELETE FROM votes WHERE voter_id = NEW.id;
+    END IF;
+END $$
+
+DELIMITER ;

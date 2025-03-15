@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voting System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header Banner -->
+        <div class="header-banner">
+            <h1>E-Voting System</h1>
+            <p>Secure • Transparent • Reliable</p>
+        </div>
+
+        <!-- Voting Process Steps -->
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <p>Login with your credentials</p>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <p>Select your candidate</p>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <p>Submit your vote</p>
+            </div>
+        </div>
+
+        <!-- Login Section -->
+        <div class="login-section">
+            <h2>Login to Vote</h2>
+            <div class="form-group">
+                <span class="form-icon">👤</span>
+                <input type="text" id="voterId" placeholder="Enter ID" class="icon-input">
+            </div>
+            <div class="form-group">
+                <span class="form-icon">📝</span>
+                <input type="text" id="username" placeholder="Enter Username" class="icon-input">
+            </div>
+            <div class="form-group">
+                <span class="form-icon">🔒</span>
+                <input type="password" id="loginPassword" placeholder="Enter Password" class="icon-input">
+            </div>
+            <button onclick="login()">Login to Access Ballot</button>
+        </div>
+
+        <!-- Info Box -->
+        <div class="info-box">
+            <h4>Important Information:</h4>
+            <p>Make sure to have your voter ID ready. Each voter can only vote once. Your vote is completely anonymous and secure.</p>
+        </div>
+
+        <!-- Message Display Area -->
+        <div id="message"></div>
+
+        <!-- Candidates Section (Initially Hidden) -->
+        <div id="candidates" class="hidden">
+            <h3>Vote for Your Candidate</h3>
+            <div id="candidateList">
+                <!-- Sample Candidates (will be populated by JavaScript) -->
+            </div>
+
+            <div class="action-buttons">
+                <button onclick="toggleUpdateUserForm()">Update User Information</button>
+                <a href="http://localhost:3000/partyInfo.html" style="text-decoration: none; width: 100%; max-width: 350px;">
+                    <button>View Party Information</button>
+                </a>
+            </div>
+        </div>
+
+        <!-- Update User Info Form (Initially Hidden) -->
+        <div id="updateUserForm" class="hidden">
+            <h3>Update Your Information</h3>
+            <div class="form-group">
+                <span class="form-icon">🪪</span>
+                <input type="text" id="updateId" placeholder="Enter ID" class="icon-input">
+            </div>
+            <div class="form-group">
+                <span class="form-icon">🪪</span>
+                <input type="password" id="oldPassword" placeholder="Enter old password" class="icon-input"  >
+            </div>
+            <div class="form-group">
+                <span class="form-icon">📋</span>
+                <input type="text" id="updateName" placeholder="Enter New Name" class="icon-input">
+            </div>
+            <div class="form-group">
+                <span class="form-icon">👤</span>
+                <input type="text" id="updateUsername" placeholder="Enter New Username" class="icon-input">
+            </div>
+            <div class="form-group">
+                <span class="form-icon">🔒</span>
+                <input type="password" id="updatePassword" placeholder="Enter New Password" class="icon-input">
+            </div>
+            <button id="updateUserBtn">Update Information</button>
+            <button onclick="toggleUpdateUserForm()" class="Change">Cancel</button>
+        </div>
+
+        <!-- Register Section -->
+        <div id="registerSection">
+            <h2>Register as a Voter</h2>
+            <form id="registerForm">
+                <input type="text" id="name" placeholder="Name" required><br>
+                <input type="text" id="user" placeholder="Username" required><br>
+                <input type="password" id="registerPassword" placeholder="Password" required><br>
+                <input type="text" id="region" placeholder="Region" required><br>
+                <button type="submit">Register</button>
+            </form>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>© 2025 E-Voting System | Secure Electronic Voting Platform</p>
+            <p>For assistance, please contact support at: support@e-voting.example.com</p>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

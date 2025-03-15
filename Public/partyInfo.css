@@ -1,0 +1,149 @@
+:root {
+    --primary-color: #3a5a9b;
+    --secondary-color: #f8f9fa;
+    --accent-color: #e63946;
+    --text-color: #333;
+    --light-text: #6c757d;
+    --card-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    --hover-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+    margin: 1.5rem 0;
+    font-size: 2.2rem;
+    font-weight: 700;
+    width: 100%;
+}
+
+.party-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 1rem;
+}
+
+.party-card {
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    width: 350px;
+    box-shadow: var(--card-shadow);
+    background-color: white;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.party-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--hover-shadow);
+}
+
+.party-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.party-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    padding: 1rem 1.5rem 0.5rem;
+    margin: 0;
+}
+
+.manifesto {
+    padding: 1rem 1.5rem;
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.6;
+    border-left: 4px solid var(--primary-color);
+    background-color: #f9f9f9;
+    margin: 0.5rem 1.5rem 1.5rem;
+    border-radius: 6px;
+}
+
+/* Fix for the text alignment */
+.party-card h3, .party-card p {
+    text-align: left;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    margin: 1rem 0;
+}
+
+button, .return-button {
+    display: block;
+    width: 180px;
+    height: 50px;
+    padding: 12px 0;
+    background: linear-gradient(135deg, var(--primary-color), #2c3e50);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    margin: 2rem auto;
+    text-align: center;
+}
+
+button:hover, .return-button:hover {
+    background: linear-gradient(135deg, #2c3e50, var(--primary-color));
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .party-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .party-card {
+        width: 90%;
+        max-width: 400px;
+    }
+}
+/* Make the RLP image stretch vertically to match LLP image height */
+.party-card:first-child img {
+    height: 200px; /* Adjust this value to match the height of the LLP image */
+    object-fit: cover; /* This preserves the aspect ratio while filling the container */
+}
+
+/* If you need more specific targeting */
+.party-card img[alt="RLP"] {
+    height: 258px;
+    object-fit: cover;
+}
+
+/* Alternative approach using class names if available */
+.rlp-image {
+    height: 500px !important;
+    object-fit: cover !important;
+}
